@@ -1,0 +1,22 @@
+{
+  "name": "my-super-robot",
+  "version": "1.0.0",
+  "description": "My Super Robot Definition",
+  "scripts": {
+    "build": "babel urdx -d .urdx",
+    "postbuild": "node .urdx/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-react-jsx": "^7.1.0",
+    "@babel/preset-env": "^7.1.0"
+  },
+  "dependencies": {
+    "urdx": "latest"
+  },
+  "babel": {
+    "plugins": [["@babel/plugin-transform-react-jsx", {"pragma": "urdx.createElement", "throwIfNamespace": false}]],
+    "presets": ["@babel/env"]
+  }
+}
